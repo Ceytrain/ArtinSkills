@@ -38,7 +38,7 @@ Generate standalone HTML report files with strict visual and structural constrai
 
 ### 6. 字体
 - **主字体：Maple Mono NF CN**
-- 通过 CDN 引入：`https://cdn.jsdelivr.net/gh/nicepkg/nice-font@main/Maple%20Mono%20NF%20CN.ttf`
+- 字体文件位于 `tools/fonts/MapleMono-NF-CN-Regular.ttf`，通过 `@font-face` 本地引入
 - 回退字体：`-apple-system, "Segoe UI", sans-serif`
 - 代码字体：`'Maple Mono NF CN', "SF Mono", Consolas, monospace`
 
@@ -77,7 +77,13 @@ Generate standalone HTML report files with strict visual and structural constrai
   <title>{报告标题}</title>
   <style>
     /* 字体引入 */
-    @font-face { ... }
+    @font-face {
+      font-family: 'Maple Mono NF CN';
+      src: url('../tools/fonts/MapleMono-NF-CN-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
     /* CSS 变量（亮色 + 暗色） */
     /* 侧边栏样式 */
     /* 主内容样式 */
